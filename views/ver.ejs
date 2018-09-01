@@ -1,0 +1,36 @@
+<%- include('./layout/head') %>
+
+<h2 class="text-center">Visualizar Contato</h2>
+<div class="container">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for (let key in contatos) { %>
+    <tr>
+      <td scope="row"><%= contatos.nome %></td>
+      <td><%= contatos.email %></td>
+      <td>
+      <p><a href="/edit/<%= id %>"><button class="btn btn-warning">Alterar</button></a></p>
+      </td>
+      <td>
+      <p><a href="/remove/<%= id %>"><button class="btn btn-danger">Remover</button></a></p>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<p></p>
+<p></p>
+
+<p><a href="/"><button class="btn btn-primary">Voltar</button></a></p>
+
+</div>
+<%- include('./layout/footer') %>

@@ -1,0 +1,28 @@
+<%- include('./layout/head') %>
+
+<h2 class="text-center">Listagem</h2>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for (let key in contatos) { %>
+    <tr>
+      <td scope="row"><%= contatos[key].nome %></td>
+      <td><%= contatos[key].email %></td>
+      <td>
+        <p><a href="/ver/<%= key %>"><button class="btn btn-primary">Ver</button></a></p>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<p><a href="/new"><button class="btn btn-primary">Novo</button></a></p>
+</div>
+<%- include('./layout/footer') %>
